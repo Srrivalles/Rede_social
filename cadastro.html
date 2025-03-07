@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Efeito de bombas de tinta no background -->
+    <div id="ink-background"></div>
+
+    <!-- Container do formulário de cadastro -->
+    <div class="cadastro-container">
+        <h2>Cadastro</h2>
+        <form id="cadastroForm">
+            <div class="input-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="input-group">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" id="sobrenome" name="sobrenome" required>
+            </div>
+            <div class="input-group">
+                <label for="apelido">Apelido</label>
+                <input type="text" id="apelido" name="apelido" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmarEmail">Confirmar Email</label>
+                <input type="email" id="confirmarEmail" name="confirmarEmail" required>
+            </div>
+            <div class="input-group">
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+            <div class="input-group">
+                <label for="genero">Gênero</label>
+                <select id="genero" name="genero">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" required>
+                    <i class="fas fa-eye" id="togglePassword"></i>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="confirmarPassword">Confirmar Senha</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirmarPassword" name="confirmarPassword" required>
+                    <i class="fas fa-eye" id="toggleConfirmarPassword"></i>
+                </div>
+            </div>
+            <button type="submit">Cadastre-se</button>
+        </form>
+    </div>
+
+    <!-- Overlay de carregamento -->
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

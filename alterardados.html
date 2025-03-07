@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Dados</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="alterar-dados-container">
+        <h2>Alterar Dados da Conta</h2>
+        <form id="alterarDadosForm">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" id="sobrenome" name="sobrenome" required>
+
+            <label for="apelido">Apelido</label>
+            <input type="text" id="apelido" name="apelido" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+            <label for="genero">Gênero</label>
+            <select id="genero" name="genero">
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <label for="password">Nova Senha</label>
+            <input type="password" id="password" name="password">
+
+            <label for="confirmarPassword">Confirmar Nova Senha</label>
+            <input type="password" id="confirmarPassword" name="confirmarPassword">
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+<div class="loading-overlay">
+    <div class="loading-spinner"></div>
+</div>
+</html>
