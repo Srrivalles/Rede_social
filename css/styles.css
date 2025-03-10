@@ -1,0 +1,416 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a; /* Cor de fundo escura */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Permite que o conteúdo cresça */
+    padding: 2rem; /* Espaçamento para a barra de rolagem */
+    overflow-y: auto; /* Ativa a barra de rolagem vertical */
+}
+
+/* Container do formulário de cadastro */
+.cadastro-container {
+    background: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px; /* Largura máxima do formulário */
+    text-align: center;
+    z-index: 2; /* Garante que o formulário fique acima do background */
+    position: relative;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Efeito de bombas de tinta no background */
+#ink-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite interação com elementos acima */
+    overflow: hidden;
+    z-index: 1; /* Garante que o background fique abaixo do perfil */
+}
+
+.ink {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #1eb464; /* Cor da tinta */
+    border-radius: 30%;
+    opacity: 0.5;
+    transform: scale(500);
+    animation: explode 9s ease-out infinite;
+}
+
+/* Animação da bomba de tinta */
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Overlay de carregamento */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loading-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #fff;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* Container do formulário de login */
+.login-container {
+    background: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 2; /* Garante que o formulário fique acima do background */
+    position: relative; /* Necessário para o z-index funcionar */
+}
+/* Estilo dos links */
+.links {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link i {
+    font-size: 1rem;
+}
+
+.link:hover {
+    color: #0056b3;
+    transform: translateX(5px); /* Efeito de deslocamento ao passar o mouse */
+}
+
+/*OCULTAR SENHA*/
+/* Estilo do campo de senha com ícone */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* Espaço para o ícone */
+}
+
+.password-wrapper i {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.password-wrapper i:hover {
+    color: #007bff;
+}
+
+/* Container do perfil */
+.perfil-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 2; /* Garante que o perfil fique acima do background */
+}
+
+/* Cabeçalho do perfil */
+.perfil-header {
+    position: relative;
+    text-align: center;
+}
+
+.capa img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.foto-perfil {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.foto-perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-alterar-foto {
+    display: block;
+    margin-top: 0.5rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-alterar-foto:hover {
+    background: #0056b3;
+}
+
+.info-usuario {
+    margin-top: 60px;
+    padding: 1rem;
+}
+
+.info-usuario h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.info-usuario p {
+    margin: 0;
+    color: #666;
+}
+
+/* Menu de navegação */
+.perfil-menu {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.perfil-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.perfil-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.perfil-menu ul li a:hover {
+    color: #007bff;
+}
+
+/* Conteúdo do perfil */
+.perfil-conteudo {
+    padding: 1rem;
+}
+
+.perfil-secao {
+    margin-bottom: 2rem;
+}
+
+.perfil-secao h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.detalhes-usuario {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detalhes-usuario li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.detalhes-usuario li i {
+    margin-right: 0.5rem;
+    color: #007bff;
+}
+
+/* Galeria de fotos */
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.galeria-fotos img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Lista de amigos */
+.lista-amigos {
+    display: flex;
+    gap: 1rem;
+}
+
+.amigo {
+    text-align: center;
+}
+
+.amigo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+}
+
+.amigo p {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Botões de ação */
+.perfil-acoes {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.btn-acao {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.btn-acao:hover {
+    background: #0056b3;
+}
+
+.btn-acao.logout {
+    background: #dc3545;
+}
+
+.btn-acao.logout:hover {
+    background: #c82333;
+}
